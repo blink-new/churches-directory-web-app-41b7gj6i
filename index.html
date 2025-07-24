@@ -1,15 +1,152 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blink App</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurchFinder - Churches Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <!-- CRITICAL: DO NOT REMOVE/MODIFY THIS COMMENT OR THE SCRIPT BELOW -->
     <script src="https://blink.new/auto-engineer.js?projectId=churches-directory-web-app-41b7gj6i" type="module"></script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html> 
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>ChurchFinder</h1>
+                </div>
+                <nav class="nav-links">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">About</a>
+                    <a href="#" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Find Your Spiritual Home</h2>
+                <p class="hero-subtitle">Discover churches in your area by denomination and location</p>
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search churches, denominations, or locations...">
+                    <button class="search-button">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">Filter by State</h3>
+                        <div class="filter-group">
+                            <label class="filter-option">
+                                <input type="radio" name="state" value="all" checked>
+                                <span class="checkmark"></span>
+                                All States
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="state" value="Illinois">
+                                <span class="checkmark"></span>
+                                Illinois
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="state" value="Missouri">
+                                <span class="checkmark"></span>
+                                Missouri
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="state" value="Indiana">
+                                <span class="checkmark"></span>
+                                Indiana
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="state" value="Wisconsin">
+                                <span class="checkmark"></span>
+                                Wisconsin
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="state" value="Iowa">
+                                <span class="checkmark"></span>
+                                Iowa
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Filter by Denomination</h3>
+                        <div class="filter-group">
+                            <label class="filter-option">
+                                <input type="radio" name="denomination" value="all" checked>
+                                <span class="checkmark"></span>
+                                All Denominations
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="denomination" value="Baptist">
+                                <span class="checkmark"></span>
+                                Baptist
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="denomination" value="Methodist">
+                                <span class="checkmark"></span>
+                                Methodist
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="denomination" value="Presbyterian">
+                                <span class="checkmark"></span>
+                                Presbyterian
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="denomination" value="Lutheran">
+                                <span class="checkmark"></span>
+                                Lutheran
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="denomination" value="Catholic">
+                                <span class="checkmark"></span>
+                                Catholic
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="denomination" value="Pentecostal">
+                                <span class="checkmark"></span>
+                                Pentecostal
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Denomination Information -->
+                    <div class="denomination-info">
+                        <h3 class="info-title">About Denominations</h3>
+                        <div id="denominationDetails" class="denomination-details">
+                            <p>Select a denomination above to learn more about their beliefs and practices.</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content Area -->
+                <div class="content">
+                    <div class="results-header">
+                        <h2 id="resultsTitle">All Churches</h2>
+                        <p id="resultsCount" class="results-count">Showing all churches</p>
+                    </div>
+
+                    <div id="churchGrid" class="church-grid">
+                        <!-- Churches will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
